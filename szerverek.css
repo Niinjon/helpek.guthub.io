@@ -120,3 +120,7 @@ section h2, section p {
     margin-bottom: 20px;
     line-height: 1.5;
 }
+
+#tip{
+    text-align: right;
+}
