@@ -22,14 +22,34 @@
         </ul>
     </div>
     <section>
-        <h1></h1>
-        <h2></h2>
-        <p></p>
-        <h2></h2>
-        <p></p>
-        <h2></h2>
-        <p></p>
-        <p></p>
+        <h1>DNS szolgáltalás konfigurációja</h1>
+        <h2>Zóna létrehozás:</h2>
+        <p>2 zóna van címkeresési és névkeresési a létrehoszásuk hasonlómódon zajlik.A címkeresési zóna maga a cím bejegyzés az a cím amit a szolgáltatás a szerver ip címéhez kapcsol. A névkeresési ennek a fordítottja ami a címre válaszol ip címmel.</p>
+        <h2>Létrehozásuk egyáltalán nem bonyolult ahogy az ábrák is mutatják:</h2>
+        <br>
+        <br>
+        <img src="./képek/DNS.PNG" alt="DNS">
+        <img src="./képek/DNS1.PNG" alt="DNS">
+        <img src="./képek/DNS2.PNG" alt="DNS">
+        <img src="./képek/DNS3.PNG" alt="DNS">
+        <p>A zónanévnek egyeznie kell a számítógép DNS utótagjával</p>
+        <img src="./képek/DNS4.PNG" alt="DNS">
+        <p>Nem kötelező de ajánlott a frissítés engedélyezése.</p>
+        <br>
+        <br>
+        <p>Ezután a címkeresési zónánk kész hozzuk létre a névkeresési zónát is az alábbi módon:</p>
+        <img src="./képek/DNS5.PNG" alt="DNS">
+        <img src="./képek/DNS6.PNG" alt="DNS">
+        <p>Adjuk meg a zóna nevét ami a szerver belső hálózati címének első 3 oktettje</p>
+        <h2 id="tip">A zóna fájl nevét nem piszkáljuk!</h2>
+        <img src="./képek/DNS7.PNG" alt="DNS">
+        <p>Vegyük fel az állomást/állomásokat(A rekordot/rekordokat) amennyiben már szerepelnek a zónában nem szükséges</p>
+        <p>Ezzel elkészült a névkeresési zónánk.</p>
+        <br>
+        <br>
+        <p>Állítsuk be a szervert hogy csak befelé szolgáltasson. A következő képpen:</p>
+        <img src="./képek/DNS8.PNG" alt="DNS">
+        <img src="./képek/DNS9.PNG" alt="DNS">
     </section>
 </body>
 </html>
