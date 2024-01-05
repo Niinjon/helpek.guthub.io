@@ -23,6 +23,26 @@
     </div>
     <section>
         <h1>DNS szolgáltalás konfigurációja</h1>
+        <h2>Előfeltételek:</h2>
+        <ul>
+            <li>Szerver FQDN beállítása</li>
+            <li>Szerver átnevezése</li>
+            <li>DNS utótag</li>
+        </ul>
+        <ul>
+            <li>Külső IP cím (10.0.5.x) [x = számítógéped IP címének utolsó oktettje]</li>
+            <li>Maszk (255.255.0.0)</li>
+            <li>Átjáró: 10.0.3.100</li>
+            <br>
+            <br>
+            <li>Belső IP cím (szabaddöntés általában vagy amit a feladat kíván)</li>
+            <li>Maszk: 255.255.255.0(általában C osztályos címhasználat)</li>
+            <li>DNS szerver: 127.0.0.1</li>
+        </ul>
+        <h2>DNS kérések figyelésének korlátozása a belső hálózatra:</h2>
+        <img src="./képek/DNS10.png" alt="DNS">
+        <br>
+        <br>
         <h2>Zóna létrehozás:</h2>
         <p>2 zóna van címkeresési és névkeresési a létrehoszásuk hasonlómódon zajlik.A címkeresési zóna maga a cím bejegyzés az a cím amit a szolgáltatás a szerver ip címéhez kapcsol. A névkeresési ennek a fordítottja ami a címre válaszol ip címmel.</p>
         <h2>Létrehozásuk egyáltalán nem bonyolult ahogy az ábrák is mutatják:</h2>
