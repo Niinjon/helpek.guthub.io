@@ -90,14 +90,3 @@ section{
     height: 100vh;
     transition: all .5s;
 }
-
-section h2, section p {
-    text-align: left;
-    justify-content: left;
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-#tip{
-    text-align: right;
-}
