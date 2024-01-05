@@ -125,3 +125,19 @@ section h2, section p {
     text-align: right;
 }
 
+#lin{
+    color: #FFF;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+}
+  
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #FFF;
+}
+  
+tr :hover {background-color: #D6EEEE;}
