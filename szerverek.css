@@ -114,7 +114,7 @@ section h1 {
     margin-bottom: 20px;
 }
 
-section h2, section p {
+section h2, section p, section ul, section li{
     text-align: left;
     justify-content: left;
     margin-bottom: 20px;
