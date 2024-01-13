@@ -24,14 +24,31 @@
         </ul>
     </div>
     <section>
-        <h1></h1>
-        <h2></h2>
-        <p></p>
-        <h2></h2>
-        <p></p>
-        <h2></h2>
-        <p></p>
-        <p></p>
+        <h1>Alapbeállítások</h1>
+        <h2>Tűzfal kikapcsolás, címzés, szerver átnevezése:</h2>
+        <p>Tűzfal kikapcsolása:<br>
+            --------------------<br>
+            Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False</p>
+        <p>Ellenőrzés:<br>
+            -----------<br>
+            Get-NetFirewallProfile | Format-Table -Property Name,Enabled</p>
+        <br>
+        <br>
+        <h2>Címzés:</h2>
+        <p>netsh interface ipv4 show interfaces<br>
+            ------------------------------------- <br>
+            Ki listázza a számítógépben található hálózati kártyákat<br>
+            (célszerű először csak az internetest a gépbe helyezni)<br>
+            ezesetben 1 lesz "Ethernet" néven<br>
+            -----------------------------------------------------------<br>
+            netsh interface ipv4 set address name="Ethernet" static cím maszk átjáró<br>
+            ------------------------------------------------------------------------<br>
+            Beállítja a kiválasztott hálózatikártya ipv4-es címét<br>
+            -----------------------------------------------------<br>
+            netsh interface ipv4 add dnsserver name="Ethernet" 127.0.0.1<br>
+            ---------------------------------------------------------<br>
+            Megadja a kiválasztott hálózati kártyának a DNS szerver címét</p>
+        
     </section>
 </body>
 </html>
