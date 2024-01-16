@@ -24,7 +24,56 @@
         </ul>
     </div>
     <section>
-        
+        <h1>DNS Szerver konfiguráció</h1>
+        <br>
+        <br>
+        <h2>Telepítés:</h2>
+        <h2 id="tip"> Pro tipp:Rendszergazdai feladatok powershellben kivitelezendők</h2>
+        <br>
+        <p>
+            -------------------------- <br>
+            Install-WindowsFeature DNS <br>
+            <br>
+            Újraindítás: shutdown_-r_-t_0 <br>
+            <br>
+            Státusz Ellenőrzés:<br>
+            WindowsFeature DNS <br>
+            -------------------------- <br>
+            </p>
+            <h2>DNS kérések figyelésének korlátozása csak a belső hálózatra:</h2>
+            <p>
+            ------------------------------------------------------------ <br>
+            $DnsServerSettings = Get-DnsServerSetting -ALL <br>
+            <br>
+            $DnsServerSettings.ListeningIpAddress = @(’’a szerver ip cmíe’’) <br>
+            <br>
+            Set-DnsServerSetting $DnsServerSettings <br>
+            ------------------------------------------------------------ <br>
+            </p>
+            <h2>Továbbítók beállítása:</h2>
+            <p>
+            ---------------------------------------------------------------------------------------------------------- <br>
+            Set-DnsServerForwarder -IPAddress ’’továbbító ip címe’’ (több esetén ’’<>’’,’’<> ’’ vesszővel elválasztva) <br>
+            ---------------------------------------------------------------------------------------------------------- <br>
+            </p>
+            <h2>Elsődleges Címkeresési,Névkeresési zóna létrehozása:</h2>
+            <p>
+                ----------------------------------------------------------------------------------------------------- <br>
+                Add-DnsServerPrimaryZone -Name "Zónanév" -ZoneFile "Zónanév.dns" -DynamicUpdate "NonsecureAndSecure" <br>
+                <br>
+                Add-DnsServerPrimaryZone -Name "Hálózatazonosító visszafelé.in-addr.arpa" -ZoneFile "Hálózatazonosító visszafelé.in-addr.arpa.dns" -DynamicUpdate "NonsecureAndSecure" <br>
+                -------------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+            </p>
+            <br>
+            <h2>PTR rekord és CNAME létrehozása:</h2>
+            <p>
+                ---------------------------------------------------------------------------------------------------------------------- <br>
+                Add-DnsServerResourceRecord -Name "Szerver címének utolsó oktettje" -Ptr -ZoneName "hálózati azonosító.in-addr.arpa" -PtrDomainName "FQDN" <br>
+                <br>
+                Add-DnsServerResourceRecordCName -Name "www.Zónanév" -HostNameAlias "FQDN" -ZoneName "Zónanév" <br>
+                ------------------------------------------------------------------------------------------------------------------ <br>
+
+        </p>
     </section>
 </body>
 </html>

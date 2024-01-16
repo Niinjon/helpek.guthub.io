@@ -25,6 +25,8 @@
     </div>
     <section>
         <h1>Alapbeállítások</h1>
+        <br>
+        <br>
         <h2>Tűzfal kikapcsolás, címzés, szerver átnevezése:</h2>
         <p>Tűzfal kikapcsolása:<br>
             --------------------<br>
@@ -32,7 +34,6 @@
         <p>Ellenőrzés:<br>
             -----------<br>
             Get-NetFirewallProfile | Format-Table -Property Name,Enabled</p>
-        <br>
         <br>
         <h2>Címzés:</h2>
         <p>netsh interface ipv4 show interfaces<br>
@@ -47,7 +48,18 @@
             -----------------------------------------------------<br>
             netsh interface ipv4 add dnsserver name="Ethernet" 127.0.0.1<br>
             ---------------------------------------------------------<br>
-            Megadja a kiválasztott hálózati kártyának a DNS szerver címét</p>
+            Megadja a kiválasztott hálózati kártyának a DNS szerver címét<br>
+            -------------------------------------------------------------</p><br>
+            <h2>Számítógép átnevezése:</h2>
+            <p>
+            ---------------------- <br>
+            wmic computersystem where caption='%computername%' rename új_gép_neve <br>
+            --------------------------------------------------------------------- <br>
+            Átnevezi a számítógépet <br>
+            <br>
+            a '%computername%' egy változó automatikusan a jelenlegi gépnevet illeszti be a helyére <br>
+            ---------------------------------------------------------------------------------------
+        </p>
         
     </section>
 </body>
