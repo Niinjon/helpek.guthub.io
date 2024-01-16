@@ -17,14 +17,40 @@
     <div class="sidebar">
         <header>Menü</header>
         <ul>
-            <li><a href="DNSG.html"><i class="fas fa-desktop"></i>DNS</a></li>
-            <li><a href="DHCPG.html"><i class="fas fa-sitemap"></i>DHCP</a></li>
-            <li><a href="NATG.html"><i class="fas fa-sitemap"></i>NAT</a></li>
+            <li><a href="DNSCL.html"><i class="fas fa-desktop"></i>DNS</a></li>
+            <li><a href="DHCPCl.html"><i class="fas fa-sitemap"></i>DHCP</a></li>
+            <li><a href="NATCL.html"><i class="fas fa-sitemap"></i>NAT</a></li>
             <li><a href="index.html"><i class="fa-solid fa-arrow-left"></i>Vissza</a></li>
         </ul>
     </div>
     <section>
-        
+        <h1>DHCP Szolgáltatás konfigurációja</h1>
+        <h2>Telepítés:</h2>
+        <p>
+            --------------------------------------- <br>
+            Install-WindowsFeature DHCP <br>
+            --------------------------------------- <br>
+        </p>
+        <h2>Pool létrehozás kezdő záró IP-cím és felkapcsolás:</h2>
+        <p>
+            ---------------------------------------------------------------------------------------------------------------------------- <br>
+            Add-DhcpServerv4Scope -name "Lan" -StartRange 192.168.10.5 -EndRange 192.168.10.250 -SubnetMask 255.255.255.0 -State Active <br>
+            ---------------------------------------------------------------------------------------------------------------------------- <br>
+        </p>
+        <h2>Forgalomirányító és a hálózat beállítása:</h2>
+        <p>
+            ------------------------------------------------------------------------------------------------------------------------------------ <br>
+            Set-DhcpServerv4OptionValue -OptionID 3 -Value 192.168.10.254 -ScopeID 192.168.10.0 [-ComputerName sajatszerv.bence.loc] opcionális <br>
+            ------------------------------------------------------------------------------------------------------------------------------------ <br>
+        </p>
+        <h2>Tartománynév és a DNS szerver címének kiosztása:</h2>
+        <p>
+            --------------------------------------------------------------------------- <br>
+            (Szintén opcionális) <br>
+            <br>
+            Set-DhcpServerv4OptionValue -DnsDomain bence.loc -DnsServer 192.168.10.254 <br>
+            --------------------------------------------------------------------------- <br>
+        </p>
     </section>
 </body>
 </html>
