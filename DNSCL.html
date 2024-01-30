@@ -69,7 +69,7 @@
             <h2>PTR rekord és CNAME létrehozása:</h2>
             <p>
                 ---------------------------------------------------------------------------------------------------------------------- <br>
-                Add-DnsServerResourceRecord -Name "Szerver címének utolsó oktettje" -Ptr -ZoneName "hálózati azonosító.in-addr.arpa" -PtrDomainName "FQDN" <br>
+                Add-DnsServerResourceRecord -Name "Szerver címének utolsó oktettje" -Ptr -ZoneName "hálózati azonosító visszafelé.in-addr.arpa" -PtrDomainName "FQDN" <br>
                 <br>
                 Add-DnsServerResourceRecordCName -Name "www.Zónanév" -HostNameAlias "FQDN" -ZoneName "Zónanév" <br>
                 ------------------------------------------------------------------------------------------------------------------ <br>
