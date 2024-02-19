@@ -9,10 +9,12 @@
 }
 
 body {
+    cursor: url("./képek/ikonok/kurzor.jpg") , auto;
     overflow-x: hidden; /* Letiltja a vízszintes görgetést, ha a tartalom túlnyúlik az ablak szélein */
 }
 
 .sidebar {
+    cursor: url("./képek/ikonok/kurzor.jpg") , auto;
     position: fixed;
     top: 0;
     left: -250px;
@@ -33,6 +35,7 @@ body {
 }
 
 .sidebar ul a {
+    cursor: url("./képek/ikonok/kurzor.jpg") , auto;
     display: block;
     height: 100%;
     width: 100%;
@@ -66,6 +69,7 @@ label #btn,label #cancel {
 }
 
 label #btn {
+    cursor: url("./képek/ikonok/kurzor.jpg") , auto;
     left: 40px;
     top: 25px;
     font-size: 35px;
@@ -75,6 +79,7 @@ label #btn {
 }
 
 label #cancel {
+    cursor: url("./képek/ikonok/kurzor.jpg") , auto;
     z-index: 1111;
     left: -195px;
     top: 17px;
@@ -141,3 +146,8 @@ th, td {
 }
   
 tr :hover {background-color: #D6EEEE;}
+
+a{
+    cursor: url("./képek/ikonok/kurzor.jpg") , auto;
+    color: white;
+}
