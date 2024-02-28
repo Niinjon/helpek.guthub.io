@@ -72,6 +72,7 @@ label #cancel{
     color: #0a5275;
     padding: 4px 9px;
     transition: all .5s ease;
+    position: fixed;
 }
 #check:checked ~ .sidebar{
     left: 0;
